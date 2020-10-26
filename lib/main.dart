@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Gurita",
       theme: ThemeData(
-        // primaryColor: primaryColor,
+        primaryColor: primaryColor,
         scaffoldBackgroundColor: Colors.white
       ),
       home: WelcomeScreen(),
