@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gurita/constant.dart';
 import 'package:gurita/welcome_screen.dart';
 
 void main() {
@@ -10,6 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Gurita",
+      theme: ThemeData(
+        // primaryColor: primaryColor,
+        scaffoldBackgroundColor: Colors.white
+      ),
       home: WelcomeScreen(),
     );
   }
