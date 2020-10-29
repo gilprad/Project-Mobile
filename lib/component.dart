@@ -4,7 +4,6 @@ import 'package:gurita/constant.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Background();
   }
 }
