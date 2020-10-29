@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:gurita/component.dart';
 import 'package:gurita/constant.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  String _email, _password;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -23,17 +29,58 @@ class Login extends StatelessWidget {
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ButtonBar(
-                    children: [
-                      FlatButton(
-                        textColor: Colors.black,
-                        disabledColor: Colors.white,
-                        disabledTextColor: Colors.grey,
-                        child: Text("Daftar", style: TextStyle(fontSize: 20),),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: FlatButton(
+                      textColor: Colors.black,
+                      disabledColor: Colors.white,
+                      disabledTextColor: Colors.grey,
+                      child: Text(
+                        "Daftar",
+                        style: TextStyle(
+                            fontSize: 30, decoration: TextDecoration.underline),
                       ),
-                      FlatButton()
-                    ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: FlatButton(
+                      textColor: Colors.black,
+                      disabledColor: Colors.white,
+                      disabledTextColor: Colors.grey,
+                      child: Text(
+                        "Masuk",
+                        style: TextStyle(
+                          fontSize: 30,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(labelText: "Email"),
+                    validator: (input) => !input.contains("@")
+                        ? "Masukkan email yang valid"
+                        : null,
+                    onSaved: (input) => _email = input,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(labelText: "Password"),
+                    validator: (input) =>
+                        input.length < 8 ? "Kata sandi salah/kurang" : null,
+                    onSaved: (input) => _password = input,
+                    obscureText: true,
+                  ),
+                  FlatButton(
+                    child: Text(
+                      "Masuk",
+                      style: TextStyle(fontSize: 25),
+                    ),
                   )
                 ],
               )
