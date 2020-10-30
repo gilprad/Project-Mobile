@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gurita/component.dart';
 import 'package:gurita/constant.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -63,25 +63,51 @@ class _LoginState extends State<Login> {
               ),
               Column(
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(labelText: "Email"),
-                    validator: (input) => !input.contains("@")
-                        ? "Masukkan email yang valid"
-                        : null,
-                    onSaved: (input) => _email = input,
+                  Container(
+                    margin: EdgeInsets.only(
+                        left: 20, top: 10, right: 20, bottom: 10),
+                    child: TextFormField(
+                      decoration: InputDecoration(labelText: "Email"),
+                      validator: (input) => !input.contains("@")
+                          ? "Masukkan email yang valid"
+                          : null,
+                      onSaved: (input) => _email = input,
+                    ),
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(labelText: "Kata Sandi"),
-                    validator: (input) =>
-                        input.length < 8 ? "Kata sandi salah/kurang" : null,
-                    onSaved: (input) => _password = input,
-                    obscureText: true,
+                  Container(
+                    margin: EdgeInsets.only(
+                        left: 20, top: 10, right: 20, bottom: 10),
+                    child: TextFormField(
+                      decoration: InputDecoration(labelText: "Kata Sandi"),
+                      validator: (input) =>
+                          input.length < 8 ? "Kata sandi salah/kurang" : null,
+                      onSaved: (input) => _password = input,
+                      obscureText: true,
+                    ),
                   ),
-                  FlatButton(
+                  Container(
+                    margin: EdgeInsets.only(top: 40, bottom: 50),
+                    padding: EdgeInsets.only(
+                        left: 120, top: 5, right: 120, bottom: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: Text(
                       "Masuk",
                       style: TextStyle(fontSize: 25),
                     ),
+                  ),
+                  Text("Atau masuk dengan:"),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Center(
+                        child: SvgPicture.asset("assets/icons/fb.svg"),
+                      ),
+                      Center(
+                        child: SvgPicture.asset("assets/icons/google.svg"),
+                      )
+                    ],
                   )
                 ],
               )
