@@ -32,30 +32,31 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: FlatButton(
-                      textColor: Colors.black,
-                      disabledColor: Colors.white,
-                      disabledTextColor: Colors.grey,
-                      child: Text(
-                        "Daftar",
-                        style: TextStyle(
-                            fontSize: 30, decoration: TextDecoration.underline),
-                      ),
+                    // margin: EdgeInsets.only(top: 1),
+                    padding: EdgeInsets.only(
+                        left: 66, top: 15, right: 66, bottom: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius:
+                            BorderRadius.only(topLeft: Radius.circular(15))),
+                    // color: Colors.blue,
+                    child: Text(
+                      "Daftar",
+                      style: TextStyle(fontSize: 25),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: FlatButton(
-                      textColor: Colors.black,
-                      disabledColor: Colors.white,
-                      disabledTextColor: Colors.grey,
-                      child: Text(
-                        "Masuk",
-                        style: TextStyle(
-                          fontSize: 30,
-                        ),
-                      ),
+                    // margin: EdgeInsets.only(top: 1),
+                    padding: EdgeInsets.only(
+                        left: 66, top: 15, right: 66, bottom: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius:
+                            BorderRadius.only(topRight: Radius.circular(15))),
+                    // color: Colors.blue,
+                    child: Text(
+                      "Masuk",
+                      style: TextStyle(fontSize: 25),
                     ),
                   )
                 ],
@@ -70,7 +71,7 @@ class _LoginState extends State<Login> {
                     onSaved: (input) => _email = input,
                   ),
                   TextFormField(
-                    decoration: InputDecoration(labelText: "Password"),
+                    decoration: InputDecoration(labelText: "Kata Sandi"),
                     validator: (input) =>
                         input.length < 8 ? "Kata sandi salah/kurang" : null,
                     onSaved: (input) => _password = input,
