@@ -67,7 +67,10 @@ class _LoginState extends State<Login> {
                     margin: EdgeInsets.only(
                         left: 20, top: 10, right: 20, bottom: 10),
                     child: TextFormField(
-                      decoration: InputDecoration(labelText: "Email"),
+                      decoration: InputDecoration(hintText: "Email"),
+                      style: TextStyle(
+                        fontSize: 20
+                      ),
                       validator: (input) => !input.contains("@")
                           ? "Masukkan email yang valid"
                           : null,
@@ -78,7 +81,10 @@ class _LoginState extends State<Login> {
                     margin: EdgeInsets.only(
                         left: 20, top: 10, right: 20, bottom: 10),
                     child: TextFormField(
-                      decoration: InputDecoration(labelText: "Kata Sandi"),
+                      decoration: InputDecoration(hintText: "Kata Sandi"),
+                      style: TextStyle(
+                        fontSize: 20
+                      ),
                       validator: (input) =>
                           input.length < 8 ? "Kata sandi salah/kurang" : null,
                       onSaved: (input) => _password = input,
@@ -98,7 +104,9 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Text("Atau masuk dengan:"),
-                  Row(
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                      child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Center(
@@ -108,7 +116,7 @@ class _LoginState extends State<Login> {
                         child: SvgPicture.asset("assets/icons/google.svg"),
                       )
                     ],
-                  )
+                  ))
                 ],
               )
             ],
