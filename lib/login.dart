@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gurita/constant.dart';
 
 class login extends StatefulWidget {
@@ -64,6 +65,42 @@ class _loginState extends State<login> {
                           )
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.09,
+                    ),
+                    Container(
+                        child: Center(
+                          child: Text(
+                            "Masuk",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                        height: size.height * 0.04,
+                        width: size.width * 0.6,
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20)))),
+                    SizedBox(
+                      height: size.height * 0.1,
+                    ),
+                    Text(
+                      "Atau masuk dengan",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.1,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(FontAwesomeIcons.google),
+                        SizedBox(
+                          width: size.width * 0.1,
+                        ),
+                        Icon(FontAwesomeIcons.facebook)
+                      ],
                     )
                   ],
                 ),
