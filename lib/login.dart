@@ -11,22 +11,63 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: size.width,
-        color: primaryColor,
+      backgroundColor: primaryColor,
+      body: SingleChildScrollView(
         child: Container(
-          width: size.width * 0.5,
-          height: size.height * 0.3,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20)),
-          padding: EdgeInsets.symmetric(vertical: 90.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: size.width * 0.05, vertical: size.height * 0.07),
+          width: size.width,
+          height: size.height,
           child: Column(
             children: [
               Container(
+                width: size.width * 1,
+                height: size.height * 0.85,
                 decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.only(topLeft: Radius.zero)),
-              )
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    Container(
+                      width: size.width * 1,
+                      height: size.height * 0.07,
+                      decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20))),
+                      child: Center(
+                        child: Text(
+                          "MASUK",
+                          style: TextStyle(fontSize: 25),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.04,
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: size.width * 0.08),
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: (InputDecoration(
+                                hintText: "Email",
+                                hintStyle: TextStyle(fontSize: 20))),
+                          ),
+                          TextFormField(
+                            decoration: (InputDecoration(
+                                hintText: "Password",
+                                hintStyle: TextStyle(fontSize: 20))),
+                            obscureText: true,
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
