@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gurita/constant.dart';
+import 'package:gurita/components/constant.dart';
 
 class login extends StatefulWidget {
   @override
@@ -100,6 +100,25 @@ class _loginState extends State<login> {
                           width: size.width * 0.1,
                         ),
                         Icon(FontAwesomeIcons.facebook)
+                      ],
+                    ),
+                    SizedBox(
+                      height: size.height * 0.1,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Belum punya akun? Klik ",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "Disini",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue,
+                              decoration: TextDecoration.underline),
+                        )
                       ],
                     )
                   ],

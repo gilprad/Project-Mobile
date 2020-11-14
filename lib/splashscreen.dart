@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:gurita/constant.dart';
+import 'package:gurita/components/constant.dart';
 import 'package:gurita/login.dart';
 
 class splashScreen extends StatefulWidget {
@@ -12,15 +12,14 @@ class _splashScreenState extends State<splashScreen> {
   start() async {
     var duration = Duration(seconds: 2);
     return Timer(duration, () {
-      // if (token==null){
       Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
     });
+  }
 
-    @override
-    void initState() {
-      start();
-      super.initState();
-    }
+  @override
+  void initState() {
+    start();
+    super.initState();
   }
 
   @override
