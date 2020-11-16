@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gurita/login.dart';
+import 'package:gurita/signup.dart';
 import 'package:gurita/splashscreen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Gurita",
-      home: splashScreen(),
+      home: signUp(),
     );
   }
 }

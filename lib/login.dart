@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gurita/components/buton.dart';
 import 'package:gurita/components/constant.dart';
+import 'package:gurita/components/form.dart';
+import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/teks.dart';
 
 class login extends StatefulWidget {
   @override
@@ -10,114 +13,83 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: primaryColor,
       body: SingleChildScrollView(
         child: Container(
+          height: displayHeight(context),
           padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.05, vertical: size.height * 0.07),
-          width: size.width,
-          height: size.height,
+              horizontal: displayWidth(context) * 0.05,
+              vertical: displayHeight(context) * 0.07),
+          width: displayWidth(context),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: size.width * 1,
-                height: size.height * 0.85,
+                height: displayHeight(context) * 0.6,
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   children: [
                     Container(
-                      width: size.width * 1,
-                      height: size.height * 0.07,
+                      height: displayHeight(context) * 0.07,
                       decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: Colors.blueGrey,
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20))),
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10))),
                       child: Center(
-                        child: Text(
-                          "MASUK",
-                          style: TextStyle(fontSize: 25),
-                        ),
-                      ),
+                          child: Teks(
+                        isi: "MASUK",
+                        size: 25,
+                        warna: Colors.white,
+                      )),
                     ),
                     SizedBox(
-                      height: size.height * 0.04,
+                      height: displayHeight(context) * 0.04,
                     ),
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.08),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: displayWidth(context) * 0.08),
                       child: Column(
                         children: [
-                          TextFormField(
-                            decoration: (InputDecoration(
-                                hintText: "Email",
-                                hintStyle: TextStyle(fontSize: 20))),
+                          Forms(
+                            forms: "Email",
                           ),
-                          TextFormField(
-                            decoration: (InputDecoration(
-                                hintText: "Password",
-                                hintStyle: TextStyle(fontSize: 20))),
-                            obscureText: true,
+                          Forms(
+                            forms: "Kata Sandi",
+                            hide: true,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.09,
+                      height: displayHeight(context) * 0.09,
                     ),
-                    Container(
-                        child: Center(
-                          child: Text(
-                            "Masuk",
-                            style: TextStyle(fontSize: 20),
+                    InkWell(
+                      onTap: () {},
+                      child: Buttons(
+                        isiButton: "Masuk",
+                      ),
+                    ),
+                    SizedBox(
+                      height: displayHeight(context) * 0.1,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Teks(
+                          isi: "Belum punya akun? Klik ",
+                          size: 20,
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Teks(
+                            isi: "disini",
+                            size: 20,
+                            warna: Colors.blue,
                           ),
-                        ),
-                        height: size.height * 0.04,
-                        width: size.width * 0.6,
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20)))),
-                    SizedBox(
-                      height: size.height * 0.1,
-                    ),
-                    Text(
-                      "Atau masuk dengan",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.1,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(FontAwesomeIcons.google),
-                        SizedBox(
-                          width: size.width * 0.1,
-                        ),
-                        Icon(FontAwesomeIcons.facebook)
-                      ],
-                    ),
-                    SizedBox(
-                      height: size.height * 0.1,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Belum punya akun? Klik ",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          "Disini",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.blue,
-                              decoration: TextDecoration.underline),
                         )
                       ],
                     )
