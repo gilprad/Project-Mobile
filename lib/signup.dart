@@ -4,6 +4,9 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/login.dart';
+
+import 'components/routes.dart';
 
 class signUp extends StatefulWidget {
   @override
@@ -94,7 +97,9 @@ class _signUpState extends State<signUp> {
                           size: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Routes.changePage(context, login());
+                          },
                           child: Teks(
                             isi: "disini",
                             size: 20,

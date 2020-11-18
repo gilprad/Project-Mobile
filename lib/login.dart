@@ -4,6 +4,9 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/signup.dart';
+
+import 'components/routes.dart';
 
 class login extends StatefulWidget {
   @override
@@ -68,7 +71,9 @@ class _loginState extends State<login> {
                       height: displayHeight(context) * 0.09,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        // Routes.changePage(context, pages)
+                      },
                       child: Buttons(
                         isiButton: "Masuk",
                       ),
@@ -84,7 +89,9 @@ class _loginState extends State<login> {
                           size: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Routes.changePage(context, signUp());
+                          },
                           child: Teks(
                             isi: "disini",
                             size: 20,

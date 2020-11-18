@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gurita/components/constant.dart';
+import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/teks.dart';
 import 'package:gurita/login.dart';
 
 class splashScreen extends StatefulWidget {
@@ -30,10 +32,18 @@ class _splashScreenState extends State<splashScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/icons/gs.png"),
-          Text(
-            "G U R I T A",
-            style: TextStyle(fontSize: 50),
+          Center(
+            child: Image.asset(
+              "assets/icons/main.png",
+              width: displayWidth(context) * 0.7,
+            ),
+          ),
+          SizedBox(height: displayHeight(context) * 0.08),
+          Center(
+            child: Teks(
+              isi: "G U R I T A",
+              size: 40,
+            ),
           )
         ],
       ),
