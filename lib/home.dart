@@ -3,7 +3,9 @@ import 'package:gurita/components/card.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/profile.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/detailpost.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.symmetric(
             horizontal: displayWidth(context) * 0.05,
             vertical: displayHeight(context) * 0.07),
-        child: Column(
+        child: ListView(
           children: [
             Profile(
               user: "Anda",
@@ -34,27 +36,38 @@ class _HomePageState extends State<HomePage> {
               isi: "Tahukah kamu?",
               size: 25,
               warna: Colors.white,
-            ),
-            SizedBox(height: displayHeight(context) * 0.03),
-            // ListView(children: [],)
-
-            Cardss(
-              image: "assets/images/1.png",
-              content: "awokaowkoakwoakwokawok",
+              arah: TextAlign.center,
             ),
             SizedBox(
-              height: displayHeight(context) * 0.03,
+              height: 20,
             ),
-            Cardss(
-              image: "assets/images/1.png",
-              content: "awokaowkoakwoakwokawok",
-            ),
-            SizedBox(
-              height: displayHeight(context) * 0.03,
-            ),
-            Cardss(
-              image: "assets/images/1.png",
-              content: "awokaowkoakwoakwokawok",
+            Container(
+              height: displayHeight(context) * 0.65,
+              width: displayWidth(context),
+              child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int i) {
+                  return Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      onTap: () {
+                        Routes.changePage(
+                            context,
+                            DetailPost(
+                              img: "assets/images/${(i + 1)}.png",
+                            ));
+                      },
+                      child: Cardss(
+                        image: "assets/images/${(i + 1)}.png",
+                        content: "awokaowkoakwoakwokawok",
+                      ),
+                    ),
+                  );
+                  // SizedBox(
+                  //   height: displayHeight(context) * 0.03,
+                  // ),
+                },
+              ),
             )
           ],
         ),
