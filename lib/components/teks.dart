@@ -12,8 +12,8 @@ class Teks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "${isi}",
-      style: GoogleFonts.montserrat(
-          fontSize: size, fontWeight: weight, color: warna),
+      style:
+          GoogleFonts.nunito(fontSize: size, fontWeight: weight, color: warna),
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
       textAlign: arah,
