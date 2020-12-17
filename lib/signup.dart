@@ -4,6 +4,7 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/home.dart';
 import 'package:gurita/login.dart';
 
 import 'components/routes.dart';
@@ -81,7 +82,9 @@ class _signUpState extends State<signUp> {
                       height: displayHeight(context) * 0.09,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Routes.changePage(context, HomePage());
+                      },
                       child: Buttons(
                         isiButton: "Buat Akun",
                       ),

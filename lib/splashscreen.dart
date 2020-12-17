@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
 import 'package:gurita/login.dart';
 
@@ -14,7 +15,7 @@ class _splashScreenState extends State<splashScreen> {
   start() async {
     var duration = Duration(seconds: 2);
     return Timer(duration, () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
+      Routes.changePage(context, login());
     });
   }
 
@@ -26,7 +27,6 @@ class _splashScreenState extends State<splashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: primaryColor,
       body: Column(

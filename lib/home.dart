@@ -21,10 +21,13 @@ class _HomePageState extends State<HomePage> {
         width: displayWidth(context),
         height: displayHeight(context),
         padding: EdgeInsets.symmetric(
-            horizontal: displayWidth(context) * 0.05,
-            vertical: displayHeight(context) * 0.07),
+          horizontal: displayWidth(context) * 0.05,
+        ),
         child: ListView(
           children: [
+            SizedBox(
+              height: 10,
+            ),
             Profile(
               user: "Anda",
               image: "assets/icons/math.png",
