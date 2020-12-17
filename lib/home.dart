@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gurita/components/bottom-nav.dart';
 import 'package:gurita/components/card.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/profile.dart';
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
+      bottomNavigationBar: BottomNav(0),
       body: Container(
         width: displayWidth(context),
         height: displayHeight(context),
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             Container(
-              height: displayHeight(context) * 0.65,
+              height: displayHeight(context) * 0.67,
               width: displayWidth(context),
               child: ListView.builder(
                 itemCount: 5,
@@ -66,9 +68,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   );
-                  // SizedBox(
-                  //   height: displayHeight(context) * 0.03,
-                  // ),
                 },
               ),
             )

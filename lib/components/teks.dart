@@ -7,14 +7,16 @@ class Teks extends StatelessWidget {
   final FontWeight weight;
   final TextAlign arah;
   final Color warna;
-  Teks({this.isi, this.size, this.weight, this.arah, this.warna});
+  final int line;
+  Teks(
+      {this.isi, this.size, this.weight, this.arah, this.warna, this.line = 3});
   @override
   Widget build(BuildContext context) {
     return Text(
       "${isi}",
       style:
           GoogleFonts.nunito(fontSize: size, fontWeight: weight, color: warna),
-      maxLines: 3,
+      maxLines: line,
       overflow: TextOverflow.ellipsis,
       textAlign: arah,
     );

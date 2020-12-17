@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gurita/catatan.dart';
 import 'package:gurita/components/routes.dart';
+import 'package:gurita/components/teks.dart';
 import 'package:gurita/home.dart';
 import 'package:gurita/modul.dart';
 import 'package:gurita/profile.dart';
@@ -27,12 +28,14 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     final _bottomNavbarItem = <BottomNavigationBarItem>[
-      BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+      BottomNavigationBarItem(icon: Icon(Icons.home), title: Teks(isi: "Home")),
       BottomNavigationBarItem(
-          icon: Icon(Icons.menu_book), title: Text("Modul")),
+          icon: Icon(Icons.menu_book), title: Teks(isi: "Modul")),
       BottomNavigationBarItem(
-          icon: Icon(Icons.sticky_note_2_outlined), title: Text("Catatan")),
-      BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Profile")),
+          icon: Icon(Icons.sticky_note_2_outlined),
+          title: Teks(isi: "Catatan")),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.person), title: Teks(isi: "Profile")),
     ];
     return BottomNavigationBar(
       backgroundColor: Colors.white,
