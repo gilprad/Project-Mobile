@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gurita/aboutus.dart';
 import 'package:gurita/components/bottom-nav.dart';
 import 'package:gurita/components/constant.dart';
-import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/login.dart';
+import 'package:gurita/profile.dart';
 
 class MorePage extends StatefulWidget {
   @override
@@ -21,6 +24,7 @@ class _MorePageState extends State<MorePage> {
         title: Teks(
           isi: "More",
           size: 22,
+          warna: Colors.black,
         ),
         centerTitle: true,
       ),
@@ -46,22 +50,51 @@ class _MorePageState extends State<MorePage> {
             //     )
             //   ],
             // )
-            Card(
-              child: ListTile(
-                leading: Teks(isi: "Profile"),
-                trailing: Icon(Icons.arrow_forward_ios),
+            InkWell(
+              onTap: () {
+                Routes.changePage(context, ProfilePage());
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Teks(
+                    isi: "Profile",
+                    size: 18,
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Teks(isi: "Tentang kami"),
-                trailing: Icon(Icons.arrow_forward_ios),
+            InkWell(
+              onTap: () {
+                Routes.changePage(context, AboutUsPage());
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Teks(
+                    isi: "Tentang kami",
+                    size: 18,
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Teks(isi: "Keluar", warna: Colors.red),
-                trailing: Icon(Icons.arrow_forward_ios),
+            SizedBox(
+              height: 320,
+            ),
+            InkWell(
+              onTap: () {
+                Routes.changePage(context, LoginPage());
+              },
+              child: Card(
+                color: Colors.red,
+                child: ListTile(
+                  leading: Teks(
+                    isi: "Keluar",
+                    warna: Colors.white,
+                    size: 18,
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
               ),
             )
           ],

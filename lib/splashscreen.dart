@@ -15,7 +15,7 @@ class _splashScreenState extends State<splashScreen> {
   start() async {
     var duration = Duration(seconds: 2);
     return Timer(duration, () {
-      Routes.changePage(context, login());
+      Routes.changePage(context, LoginPage());
     });
   }
 
