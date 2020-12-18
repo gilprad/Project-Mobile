@@ -10,30 +10,33 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: displayWidth(context),
-        height: displayHeight(context) * 0.1,
+        height: displayHeight(context) * 0.11,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(9), color: Colors.white),
-        child: Column(
+        child: Stack(
           children: [
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: displayWidth(context) * 0.07,
-                ),
-                CircleAvatar(
+            Positioned(
+                bottom: 15,
+                left: 20,
+                top: 15,
+                child: CircleAvatar(
                   child: Image.asset("${image}"),
-                ),
-                SizedBox(
-                  width: displayWidth(context) * 0.07,
-                ),
-                Teks(
-                  isi: "Halo ${user}",
-                  size: 20,
-                )
-              ],
+                )),
+            Positioned(
+              top: 15,
+              left: 80,
+              child: Teks(
+                isi: "Halo ${user}",
+                size: 18,
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              left: 80,
+              child: Teks(
+                isi: "Mau belajar apa hari ini?",
+                size: 18,
+              ),
             )
           ],
         ));

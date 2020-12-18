@@ -4,7 +4,7 @@ import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
 import 'package:gurita/home.dart';
 import 'package:gurita/modul.dart';
-import 'package:gurita/profile.dart';
+import 'package:gurita/more.dart';
 
 class BottomNav extends StatefulWidget {
   final int i;
@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
     HomePage(),
     ModulPage(),
     CatatanPage(),
-    ProfilePage(),
+    MorePage(),
   ];
   // int selectedIndex = widget.i;
   void _navbarTapped(int index) {
@@ -35,7 +35,7 @@ class _BottomNavState extends State<BottomNav> {
           icon: Icon(Icons.sticky_note_2_outlined),
           title: Teks(isi: "Catatan")),
       BottomNavigationBarItem(
-          icon: Icon(Icons.person), title: Teks(isi: "Profile")),
+          icon: Icon(Icons.more_horiz_rounded), title: Teks(isi: "More")),
     ];
     return BottomNavigationBar(
       backgroundColor: Colors.white,
