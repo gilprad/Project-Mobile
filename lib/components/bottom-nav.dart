@@ -45,6 +45,7 @@ class _BottomNavState extends State<BottomNav> {
           ))
     ];
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       items: _bottomNavbarItem,
       currentIndex: widget.i,
