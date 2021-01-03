@@ -25,7 +25,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
         title: Teks(
           isi: "Tentang kami",
           size: 20,
-          warna: Colors.black,
         ),
       ),
       backgroundColor: primaryColor,

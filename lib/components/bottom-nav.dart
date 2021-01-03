@@ -28,14 +28,21 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     final _bottomNavbarItem = <BottomNavigationBarItem>[
-      BottomNavigationBarItem(icon: Icon(Icons.home), title: Teks(isi: "Home")),
       BottomNavigationBarItem(
-          icon: Icon(Icons.menu_book), title: Teks(isi: "Modul")),
+          icon: Icon(Icons.home),
+          title: Teks(isi: "Home", warna: Colors.black)),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.menu_book),
+          title: Teks(isi: "Modul", warna: Colors.black)),
       BottomNavigationBarItem(
           icon: Icon(Icons.sticky_note_2_outlined),
-          title: Teks(isi: "Catatan")),
+          title: Teks(isi: "Catatan", warna: Colors.black)),
       BottomNavigationBarItem(
-          icon: Icon(Icons.more_horiz_rounded), title: Teks(isi: "More")),
+          icon: Icon(Icons.more_horiz_rounded),
+          title: Teks(
+            isi: "More",
+            warna: Colors.black,
+          ))
     ];
     return BottomNavigationBar(
       backgroundColor: Colors.white,

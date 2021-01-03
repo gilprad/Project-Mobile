@@ -9,7 +9,12 @@ class Teks extends StatelessWidget {
   final Color warna;
   final int line;
   Teks(
-      {this.isi, this.size, this.weight, this.arah, this.warna, this.line = 3});
+      {this.isi,
+      this.size,
+      this.weight,
+      this.arah,
+      this.warna = Colors.black,
+      this.line = 3});
   @override
   Widget build(BuildContext context) {
     return Text(

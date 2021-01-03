@@ -24,7 +24,6 @@ class _MorePageState extends State<MorePage> {
         title: Teks(
           isi: "More",
           size: 22,
-          warna: Colors.black,
         ),
         centerTitle: true,
       ),

@@ -26,7 +26,6 @@ class _ProfilePageState extends State<ProfilePage> {
             }),
         title: Teks(
           isi: "Profil",
-          warna: Colors.black,
         ),
       ),
       body: Container(
