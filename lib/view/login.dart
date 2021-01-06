@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gurita/authservice.dart';
 import 'package:gurita/components/buton.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/signup.dart';
-import 'components/routes.dart';
+import 'package:gurita/view/signup.dart';
+import 'package:gurita/components/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,6 +14,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,9 +63,11 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Forms(
                               forms: "Email",
+                              controller: emailController,
                             ),
                             Forms(
                               forms: "Kata Sandi",
+                              controller: passwordController,
                               hide: true,
                             )
                           ],
@@ -71,13 +76,8 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: displayHeight(context) * 0.09,
                       ),
-                      InkWell(
-                        onTap: () {
-                          // Routes.changePage(context, pages)
-                        },
-                        child: Buttons(
-                          isiButton: "Masuk",
-                        ),
+                      RaisedButton(
+                        color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: displayHeight(context) * 0.1,

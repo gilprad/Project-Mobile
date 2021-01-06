@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gurita/catatan.dart';
+import 'package:gurita/view/catatan.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/home.dart';
-import 'package:gurita/modul.dart';
-import 'package:gurita/more.dart';
+import 'package:gurita/view/home.dart';
+import 'package:gurita/view/modul.dart';
+import 'package:gurita/view/more.dart';
 
 class BottomNav extends StatefulWidget {
   final int i;

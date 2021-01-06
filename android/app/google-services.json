@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599085712595",
+    "project_id": "gurita-9fb15",
+    "storage_bucket": "gurita-9fb15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599085712595:android:441ed1e33e579d06f90026",
+        "android_client_info": {
+          "package_name": "com.example.gurita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599085712595-ao55ris01vcg0eame8lkecmn4pekkpnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCToylqF4qzKjNtVTaRCb4xrWXPZGb_bOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599085712595-ao55ris01vcg0eame8lkecmn4pekkpnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/login.dart';
+import 'package:gurita/view/login.dart';
 
 class splashScreen extends StatefulWidget {
   @override

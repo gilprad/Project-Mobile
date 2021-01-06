@@ -6,7 +6,7 @@ import 'package:gurita/components/profile.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/detailpost.dart';
+import 'package:gurita/view/detailpost.dart';
 
 class HomePage extends StatefulWidget {
   @override

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gurita/aboutus.dart';
+import 'package:gurita/view/aboutus.dart';
 import 'package:gurita/components/bottom-nav.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/login.dart';
-import 'package:gurita/profile.dart';
+import 'package:gurita/view/login.dart';
+import 'package:gurita/view/profile.dart';
 
 class MorePage extends StatefulWidget {
   @override

@@ -4,10 +4,9 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/home.dart';
-import 'package:gurita/login.dart';
-
-import 'components/routes.dart';
+import 'package:gurita/view/home.dart';
+import 'package:gurita/view/login.dart';
+import 'package:gurita/components/routes.dart';
 
 class signUp extends StatefulWidget {
   @override
