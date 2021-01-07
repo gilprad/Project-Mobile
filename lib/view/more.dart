@@ -82,7 +82,7 @@ class _MorePageState extends State<MorePage> {
             ),
             InkWell(
               onTap: () {
-                Routes.changePage(context, LoginPage());
+                // Routes.changePage(context, LoginPage());
               },
               child: Card(
                 color: Colors.red,

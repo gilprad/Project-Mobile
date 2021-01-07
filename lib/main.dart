@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:gurita/authservice.dart';
 import 'package:gurita/view/home.dart';
 import 'package:gurita/view/login.dart';
-import 'package:gurita/view/signup.dart';
 import 'package:gurita/view/splashscreen.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +27,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Gurita',
-        home: AuthenticationWrapper(),
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
       ),
     );
   }

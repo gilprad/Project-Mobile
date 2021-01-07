@@ -1,6 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -23,6 +21,15 @@ class AuthenticationService {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       return 'Hello';
+    } on FirebaseAuthException catch (e) {
+      return e.message;
+    }
+  }
+
+  Future<String> signOut() async {
+    try {
+      await _firebaseAuth.signOut();
+      return "signed out";
     } on FirebaseAuthException catch (e) {
       return e.message;
     }

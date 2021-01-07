@@ -100,7 +100,7 @@ class _signUpState extends State<signUp> {
                         ),
                         InkWell(
                           onTap: () {
-                            Routes.changePage(context, LoginPage());
+                            // Routes.changePage(context, LoginPage());
                           },
                           child: Teks(
                             isi: "disini",
