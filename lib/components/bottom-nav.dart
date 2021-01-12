@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gurita/view/catatan.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
 import 'package:gurita/view/home.dart';
@@ -17,7 +16,6 @@ class _BottomNavState extends State<BottomNav> {
   final _listPage = <StatefulWidget>[
     HomePage(),
     ModulPage(),
-    CatatanPage(),
     MorePage(),
   ];
   // int selectedIndex = widget.i;
@@ -35,9 +33,6 @@ class _BottomNavState extends State<BottomNav> {
           icon: Icon(Icons.menu_book),
           title: Teks(isi: "Modul", warna: Colors.black)),
       BottomNavigationBarItem(
-          icon: Icon(Icons.sticky_note_2_outlined),
-          title: Teks(isi: "Catatan", warna: Colors.black)),
-      BottomNavigationBarItem(
           icon: Icon(Icons.more_horiz_rounded),
           title: Teks(
             isi: "More",
@@ -45,7 +40,6 @@ class _BottomNavState extends State<BottomNav> {
           ))
     ];
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       items: _bottomNavbarItem,
       currentIndex: widget.i,

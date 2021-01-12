@@ -17,7 +17,7 @@ class _MorePageState extends State<MorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(3),
+      bottomNavigationBar: BottomNav(2),
       appBar: AppBar(
         leading: Container(),
         backgroundColor: primaryColor,
@@ -38,17 +38,6 @@ class _MorePageState extends State<MorePage> {
             SizedBox(
               height: 60,
             ),
-            // Stack(
-            //   children: [
-            //     Positioned(
-            //       // left: 10,
-            //       // top: 10,
-            //       child: CircleAvatar(
-            //         child: Image.asset("assets/icons/physics.png"),
-            //       ),
-            //     )
-            //   ],
-            // )
             InkWell(
               onTap: () {
                 Routes.changePage(context, ProfilePage());

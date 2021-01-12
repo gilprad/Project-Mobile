@@ -5,7 +5,10 @@ import 'package:gurita/components/teks.dart';
 class Profile extends StatelessWidget {
   final String user;
   final String image;
-  Profile({this.user, this.image});
+  Profile({
+    this.user,
+    this.image,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,6 +23,7 @@ class Profile extends StatelessWidget {
                 left: 20,
                 top: 15,
                 child: CircleAvatar(
+                  radius: 22,
                   child: Image.asset("${image}"),
                 )),
             Positioned(

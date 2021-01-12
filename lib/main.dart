@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:gurita/view/home.dart';
+import 'package:gurita/view/splashscreen.dart';
 import 'package:gurita/authservice.dart';
 import 'package:gurita/view/home.dart';
 import 'package:gurita/view/login.dart';
@@ -40,6 +42,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
+      print("x");
       return HomePage();
     }
     return LoginPage();
