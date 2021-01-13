@@ -12,8 +12,22 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  // _PickedFile = _imageFile;
+  PickedFile = _imageFile;
   final ImagePicker _picker = ImagePicker();
+
+  void takePhoto(ImageSource source) async {
+    final pickedFile = await _picker.getImage(source: source);
+    setState(() {
+      _imageFile = pickedFile;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    takePhoto();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,7 +134,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     FlatButton.icon(
                       icon: Icon(Icons.camera),
-                      onPressed: () {},
+                      onPressed: () {
+                        takePhoto(ImageSource.camera);
+                      },
                       label: Teks(
                         isi: "Kamera",
                         size: 18,
@@ -131,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     FlatButton.icon(
                       icon: Icon(Icons.image),
-                      onPressed: () {},
+                      onPressed: () {takePhoto(ImageSource.gallery);},
                       label: Teks(isi: "Galeri", size: 18),
                     )
                   ],
@@ -140,12 +156,5 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           );
         });
-  }
-
-  void takePhoto(ImageSource source) async {
-    final _pickedFile = await _picker.getImage(source: source);
-    setState(() {
-      // _imageFile = _pickedFile;
-    });
   }
 }

@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
 import 'package:gurita/view/home.dart';
 import 'package:gurita/view/login.dart';
@@ -13,20 +13,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  void startTimer() {
+    Timer(Duration(seconds: 3), () {
+      Routes.changePage(context, LoginPage());
+    });
+  }
+
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5), () {
-      if (FirebaseAuth.instance.currentUser == null) {
-        // user not logged ==> Login Screen
-        Navigator.pushAndRemoveUntil(context,
-            MaterialPageRoute(builder: (_) => LoginPage()), (route) => false);
-      } else {
-        // user already logged in ==> Home Screen
-        Navigator.pushAndRemoveUntil(context,
-            MaterialPageRoute(builder: (_) => HomePage()), (route) => false);
-      }
-    });
+    startTimer();
   }
 
   @override

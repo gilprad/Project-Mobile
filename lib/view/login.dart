@@ -1,14 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gurita/authservice.dart';
+import 'package:gurita/components/buton.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/form.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
-import 'package:gurita/view/home.dart';
 import 'package:gurita/view/signup.dart';
 import 'package:gurita/components/routes.dart';
-import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -80,17 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: displayHeight(context) * 0.09,
                       ),
-                      RaisedButton(
-                        onPressed: () {
-                          context.read<AuthenticationService>().signIn(
-                              email: emailController.text.trim(),
-                              password: passwordController.text.trim());
-                        },
-                        color: Colors.blueGrey,
-                        child: Teks(
-                          isi: "Masuk",
-                          warna: Colors.white,
-                        ),
+                      Buttons(
+                        isiButton: "Masuk",
                       ),
                       SizedBox(
                         height: displayHeight(context) * 0.1,
