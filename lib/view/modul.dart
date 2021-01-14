@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gurita/components/bottom-nav.dart';
 import 'package:gurita/components/constant.dart';
+import 'package:gurita/components/iconmodul.dart';
 import 'package:gurita/components/profile.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/teks.dart';
@@ -69,9 +70,30 @@ class _ModulPageState extends State<ModulPage> {
                     ],
                   )),
               SizedBox(height: 10),
+              // Container(
+              //   width: displayWidth(context),
+              //   height: displayHeight(context) * 0.715,
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(9),
+              //       color: Colors.white),
+              //   child: Column(
+              //     children: [
+              //       SizedBox(
+              //         height: 10,
+              //       ),
+              //       Teks(
+              //         isi: "Modul",
+              //         size: 30,
+              //       )
+              //     ],
+              //   ),
+              // ),
               Container(
                 width: displayWidth(context),
                 height: displayHeight(context) * 0.715,
+                padding: EdgeInsets.symmetric(
+                    horizontal: displayWidth(context) * 0.01,
+                    vertical: displayHeight(context) * 0.01),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
                     color: Colors.white),
@@ -83,6 +105,40 @@ class _ModulPageState extends State<ModulPage> {
                     Teks(
                       isi: "Modul",
                       size: 30,
+                    ),
+                    SizedBox(height: 20),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            IconModul(
+                              gambar: "math",
+                              matpel: "Matematika",
+                            ),
+                            IconModul(
+                              gambar: "bio",
+                              matpel: "Biologi",
+                            ),
+                            IconModul(
+                              gambar: "physics",
+                              matpel: "Fisika",
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconModul(
+                              gambar: "chemical",
+                              matpel: "Kimia",
+                            ),
+                          ],
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -134,15 +190,4 @@ class _ModulPageState extends State<ModulPage> {
           )),
         ),
       );
-
-  void pressed(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return Container(
-            height: 400,
-            width: displayWidth(context) * 1,
-          );
-        });
-  }
 }

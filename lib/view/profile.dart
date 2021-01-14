@@ -12,20 +12,20 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  PickedFile = _imageFile;
+  // PickedFile = _imageFile;
   final ImagePicker _picker = ImagePicker();
 
   void takePhoto(ImageSource source) async {
     final pickedFile = await _picker.getImage(source: source);
     setState(() {
-      _imageFile = pickedFile;
+      // _imageFile = pickedFile;
     });
   }
 
   @override
   void initState() {
     super.initState();
-    takePhoto();
+    // takePhoto();
   }
 
   @override
@@ -147,7 +147,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     FlatButton.icon(
                       icon: Icon(Icons.image),
-                      onPressed: () {takePhoto(ImageSource.gallery);},
+                      onPressed: () {
+                        takePhoto(ImageSource.gallery);
+                      },
                       label: Teks(isi: "Galeri", size: 18),
                     )
                   ],
