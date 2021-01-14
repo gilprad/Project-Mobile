@@ -4,7 +4,9 @@ import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/iconmodul.dart';
 import 'package:gurita/components/profile.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/view/masukmodul.dart';
 
 class ModulPage extends StatefulWidget {
   @override
@@ -44,7 +46,7 @@ class _ModulPageState extends State<ModulPage> {
                           top: 15,
                           child: CircleAvatar(
                             radius: 22,
-                            child: Image.asset(""),
+                            child: Image.asset("assets/icons/main.png"),
                           )),
                       Positioned(
                         top: 15,
@@ -112,9 +114,14 @@ class _ModulPageState extends State<ModulPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            IconModul(
-                              gambar: "math",
-                              matpel: "Matematika",
+                            InkWell(
+                              onTap: () {
+                                Routes.changePage(context, MasukModul());
+                              },
+                              child: IconModul(
+                                gambar: "math",
+                                matpel: "Matematika",
+                              ),
                             ),
                             IconModul(
                               gambar: "bio",
@@ -180,7 +187,7 @@ class _ModulPageState extends State<ModulPage> {
           decoration: ShapeDecoration(
             color: Colors.grey,
             shape: StadiumBorder(
-              side: BorderSide(color: textColor, width: 0.4),
+              side: BorderSide(color: textColor, width: 0.2),
             ),
           ),
           child: Center(
