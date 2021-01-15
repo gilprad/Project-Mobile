@@ -50,7 +50,12 @@ class _MasukModulState extends State<MasukModul> {
                   horizontal: displayWidth(context) * 0.035,
                   vertical: displayHeight(context) * 0.035),
               child: Column(
-                children: [ListBab()],
+                children: [
+                  ListBab(
+                    icon: Icons.filter_1,
+                    bab: "Vektor",
+                  ),
+                ],
               ),
             ),
           )

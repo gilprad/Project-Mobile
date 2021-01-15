@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gurita/components/buton.dart';
 import 'package:gurita/components/constant.dart';
@@ -12,20 +13,26 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  // PickedFile = _imageFile;
-  final ImagePicker _picker = ImagePicker();
+  File _image;
 
-  void takePhoto(ImageSource source) async {
-    final pickedFile = await _picker.getImage(source: source);
+  final imagePicker = ImagePicker();
+  Future takePhoto() async {
+    final image = await imagePicker.getImage(source: ImageSource.camera);
     setState(() {
-      // _imageFile = pickedFile;
+      _image = File(image.path);
+    });
+  }
+
+  Future chooseFile() async {
+    final image = await imagePicker.getImage(source: ImageSource.gallery);
+    setState(() {
+      _image = File(image.path);
     });
   }
 
   @override
   void initState() {
     super.initState();
-    // takePhoto();
   }
 
   @override
@@ -45,37 +52,39 @@ class _ProfilePageState extends State<ProfilePage> {
           isi: "Profil",
         ),
       ),
-      body: Container(
-        width: displayWidth(context),
-        height: displayHeight(context),
-        padding: EdgeInsets.symmetric(
-            horizontal: displayWidth(context) * 0.03,
-            vertical: displayHeight(context) * 0.03),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            ProfilePicture(context),
-            SizedBox(height: 20),
-            Forms(
-              forms: "Nama",
-            ),
-            SizedBox(height: 10),
-            Forms(
-              forms: "Email",
-            ),
-            SizedBox(height: 10),
-            Forms(
-              forms: "No. Telpon",
-            ),
-            SizedBox(
-              height: 250,
-            ),
-            Buttons(
-              isiButton: "Save",
-            )
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          width: displayWidth(context),
+          height: displayHeight(context),
+          padding: EdgeInsets.symmetric(
+              horizontal: displayWidth(context) * 0.03,
+              vertical: displayHeight(context) * 0.03),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              ProfilePicture(context),
+              SizedBox(height: 20),
+              Forms(
+                forms: "Nama",
+              ),
+              SizedBox(height: 10),
+              Forms(
+                forms: "Email",
+              ),
+              SizedBox(height: 10),
+              Forms(
+                forms: "No. Telpon",
+              ),
+              SizedBox(
+                height: 250,
+              ),
+              Buttons(
+                isiButton: "Save",
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -85,9 +94,10 @@ class _ProfilePageState extends State<ProfilePage> {
     return Stack(
       children: [
         CircleAvatar(
-          radius: 50,
-          backgroundImage: AssetImage("assets/icons/math.png"),
-        ),
+            radius: 50,
+            backgroundImage: _image == null
+                ? AssetImage("assets/icons/math.png")
+                : FileImage(_image)),
         Positioned(
           bottom: 0,
           right: 0,
@@ -135,7 +145,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     FlatButton.icon(
                       icon: Icon(Icons.camera),
                       onPressed: () {
-                        takePhoto(ImageSource.camera);
+                        takePhoto();
                       },
                       label: Teks(
                         isi: "Kamera",
@@ -148,7 +158,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     FlatButton.icon(
                       icon: Icon(Icons.image),
                       onPressed: () {
-                        takePhoto(ImageSource.gallery);
+                        chooseFile();
                       },
                       label: Teks(isi: "Galeri", size: 18),
                     )

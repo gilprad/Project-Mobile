@@ -14,6 +14,23 @@ class ModulPage extends StatefulWidget {
 }
 
 class _ModulPageState extends State<ModulPage> {
+  String jenisModulKelas = '';
+  String value = '';
+
+  void setNamaKelas() {
+    setState(() {
+      value = jenisModulKelas;
+    });
+  }
+
+  Widget buildModul() {
+    if (jenisModulKelas == '') {
+      return modulKelasPolosan();
+    } else if (jenisModulKelas == '1') {
+      return modulKelas();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,84 +89,8 @@ class _ModulPageState extends State<ModulPage> {
                     ],
                   )),
               SizedBox(height: 10),
-              // Container(
-              //   width: displayWidth(context),
-              //   height: displayHeight(context) * 0.715,
-              //   decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.circular(9),
-              //       color: Colors.white),
-              //   child: Column(
-              //     children: [
-              //       SizedBox(
-              //         height: 10,
-              //       ),
-              //       Teks(
-              //         isi: "Modul",
-              //         size: 30,
-              //       )
-              //     ],
-              //   ),
-              // ),
-              Container(
-                width: displayWidth(context),
-                height: displayHeight(context) * 0.715,
-                padding: EdgeInsets.symmetric(
-                    horizontal: displayWidth(context) * 0.01,
-                    vertical: displayHeight(context) * 0.01),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(9),
-                    color: Colors.white),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Teks(
-                      isi: "Modul",
-                      size: 30,
-                    ),
-                    SizedBox(height: 20),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Routes.changePage(context, MasukModul());
-                              },
-                              child: IconModul(
-                                gambar: "math",
-                                matpel: "Matematika",
-                              ),
-                            ),
-                            IconModul(
-                              gambar: "bio",
-                              matpel: "Biologi",
-                            ),
-                            IconModul(
-                              gambar: "physics",
-                              matpel: "Fisika",
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconModul(
-                              gambar: "chemical",
-                              matpel: "Kimia",
-                            ),
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              )
+              buildModul()
+              // modulKelas()
             ],
           ),
         ),
@@ -161,9 +102,17 @@ class _ModulPageState extends State<ModulPage> {
         itemBuilder: (context) => [
           PopupMenuItem(
             value: 1,
-            child: Text(
-              "Kelas 1",
-              style: TextStyle(color: textColor, fontWeight: FontWeight.w700),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  jenisModulKelas = '1';
+                  value = '1';
+                });
+              },
+              child: Text(
+                "Kelas 1",
+                style: TextStyle(color: textColor, fontWeight: FontWeight.w700),
+              ),
             ),
           ),
           PopupMenuItem(
@@ -192,9 +141,94 @@ class _ModulPageState extends State<ModulPage> {
           ),
           child: Center(
               child: Teks(
-            isi: "Kelas: -",
+            isi: "Kelas: " + value.toString(),
             size: 18,
           )),
         ),
       );
+
+  Widget modulKelas() {
+    return Container(
+      width: displayWidth(context),
+      height: displayHeight(context) * 0.715,
+      padding: EdgeInsets.symmetric(
+          horizontal: displayWidth(context) * 0.01,
+          vertical: displayHeight(context) * 0.01),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(9), color: Colors.white),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Teks(
+            isi: "Modul",
+            size: 30,
+          ),
+          SizedBox(height: 20),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Routes.changePage(context, MasukModul());
+                    },
+                    child: IconModul(
+                      gambar: "math",
+                      matpel: "Matematika",
+                    ),
+                  ),
+                  IconModul(
+                    gambar: "bio",
+                    matpel: "Biologi",
+                  ),
+                  IconModul(
+                    gambar: "physics",
+                    matpel: "Fisika",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 33,
+                  ),
+                  IconModul(
+                    gambar: "chemical",
+                    matpel: "Kimia",
+                  ),
+                ],
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget modulKelasPolosan() {
+    return Container(
+      width: displayWidth(context),
+      height: displayHeight(context) * 0.715,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(9), color: Colors.white),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Teks(
+            isi: "Modul",
+            size: 30,
+          )
+        ],
+      ),
+    );
+  }
 }

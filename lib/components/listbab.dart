@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gurita/components/teks.dart';
 
 class ListBab extends StatelessWidget {
-  final Icon icon;
+  final IconData icon;
   final String bab;
   ListBab({this.bab, this.icon});
   @override
@@ -25,7 +25,7 @@ class ListBab extends StatelessWidget {
             width: 15,
           ),
           Icon(
-            Icons.filter_1,
+            icon,
             size: 30,
           ),
           SizedBox(

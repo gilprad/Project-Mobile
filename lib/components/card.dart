@@ -5,8 +5,8 @@ import 'package:gurita/components/teks.dart';
 class Cardss extends StatelessWidget {
   final String image;
   final String content;
-
-  Cardss({this.image, this.content});
+  final TextAlign arah;
+  Cardss({this.image, this.content, this.arah});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,12 +32,10 @@ class Cardss extends StatelessWidget {
                     fit: BoxFit.cover)),
           ),
           Teks(
+            arah: TextAlign.justify,
             isi: "${content}",
             size: 20,
           )
-          // SizedBox(
-          //   height: displayHeight(context) * 0.03,
-          // )
         ],
       ),
     );
