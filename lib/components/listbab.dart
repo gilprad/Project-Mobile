@@ -32,7 +32,7 @@ class ListBab extends StatelessWidget {
             width: 25,
           ),
           Teks(
-            isi: "Vektor",
+            isi: "${bab}",
             size: 24,
           ),
           SizedBox(

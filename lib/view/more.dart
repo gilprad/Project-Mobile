@@ -6,6 +6,7 @@ import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
 import 'package:gurita/view/login.dart';
+import 'package:gurita/view/maps.dart';
 import 'package:gurita/view/profile.dart';
 
 class MorePage extends StatefulWidget {
@@ -66,8 +67,22 @@ class _MorePageState extends State<MorePage> {
                 ),
               ),
             ),
+            InkWell(
+              onTap: () {
+                Routes.changePage(context, OpenMaps());
+              },
+              child: Card(
+                child: ListTile(
+                  leading: Teks(
+                    isi: "Maps",
+                    size: 18,
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
+            ),
             SizedBox(
-              height: 320,
+              height: 250,
             ),
             InkWell(
               onTap: () {
@@ -84,7 +99,7 @@ class _MorePageState extends State<MorePage> {
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

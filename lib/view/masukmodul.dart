@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gurita/components/listbab.dart';
 import 'package:gurita/components/responsive.dart';
+import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
+import 'package:gurita/view/detailbab.dart';
 
 class MasukModul extends StatefulWidget {
   @override
@@ -51,10 +53,29 @@ class _MasukModulState extends State<MasukModul> {
                   vertical: displayHeight(context) * 0.035),
               child: Column(
                 children: [
-                  ListBab(
-                    icon: Icons.filter_1,
-                    bab: "Vektor",
+                  InkWell(
+                    onTap: () {
+                      Routes.changePage(context, DetailBab());
+                    },
+                    child: ListBab(
+                      icon: Icons.filter_1,
+                      bab: "Vektor",
+                    ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ListBab(
+                    icon: Icons.filter_2,
+                    bab: "Fungsi",
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ListBab(
+                    icon: Icons.filter_3,
+                    bab: "Relasi",
+                  )
                 ],
               ),
             ),

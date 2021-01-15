@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gurita/components/bottom-nav.dart';
 import 'package:gurita/components/constant.dart';
 import 'package:gurita/components/iconmodul.dart';
-import 'package:gurita/components/profile.dart';
 import 'package:gurita/components/responsive.dart';
 import 'package:gurita/components/routes.dart';
 import 'package:gurita/components/teks.dart';
